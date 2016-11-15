@@ -26,16 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcSurfaceArea(View view){
 
-
-        String SideAString = textSideA.getText().toString();
-        String SideBString = textSideB.getText().toString();
-        String HeightString = textHeight.getText().toString();
-
-        double sideA = 0;
-        double sideB = 0;
-        double height = 0;
-
         try {
+
+            String SideAString = textSideA.getText().toString();
+            String SideBString = textSideB.getText().toString();
+            String HeightString = textHeight.getText().toString();
+
+            double sideA = 0;
+            double sideB = 0;
+            double height = 0;
 
             sideA = Double.parseDouble(SideAString);
             sideB = Double.parseDouble(SideBString);
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             resultView.setText("" + result);
 
         } catch (NumberFormatException e) {
-
             resultView.setText("WRONG INPUT");
             e.printStackTrace();
         }
