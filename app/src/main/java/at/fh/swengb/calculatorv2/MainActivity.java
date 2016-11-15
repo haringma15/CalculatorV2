@@ -18,23 +18,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText textSideA = (EditText) findViewById(R.id.txtbxSideA);
-        EditText textSideB = (EditText) findViewById(R.id.txtbxSideB);
-        EditText textHeight = (EditText) findViewById(R.id.txtbxHeight);
-        TextView resultview = (TextView) findViewById(R.id.lblResult);
+        textSideA = (EditText) findViewById(R.id.txtbxSideA);
+        textSideB = (EditText) findViewById(R.id.txtbxSideB);
+        textHeight = (EditText) findViewById(R.id.txtbxHeight);
+        resultView = (TextView) findViewById(R.id.lblResult);
     }
 
     public void calcSurfaceArea(View view){
 
+        String SideAString = textSideA.getText().toString();
+        String SideBString = textSideB.getText().toString();
+        String HeightString = textHeight.getText().toString();
+
+        double sideA = 0;
+        double sideB = 0;
+        double height = 0;
+
         try {
-
-            String SideAString = textSideA.getText().toString();
-            String SideBString = textSideB.getText().toString();
-            String HeightString = textHeight.getText().toString();
-
-            double sideA = 0;
-            double sideB = 0;
-            double height = 0;
 
             sideA = Double.parseDouble(SideAString);
             sideB = Double.parseDouble(SideBString);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
             double result = 2 * sideA * sideB + 2 * sideA * height + 2 * sideB * height;
 
-            resultView.setText("" + result);
+            resultView.setText(String.format("" + result));
 
         } catch (NumberFormatException e) {
             resultView.setText("WRONG INPUT");
