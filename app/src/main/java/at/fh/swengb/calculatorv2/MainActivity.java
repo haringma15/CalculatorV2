@@ -1,5 +1,6 @@
 package at.fh.swengb.calculatorv2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,5 +49,13 @@ public class MainActivity extends AppCompatActivity {
             resultView.setText("WRONG INPUT");
             e.printStackTrace();
         }
+    }
+
+    public void showAbout(View view) {
+        Intent intent = new Intent(this,DisplayAbout.class);
+        String result = resultView.getText().toString();
+        intent.putExtra("Result", result);
+
+        startActivity(intent);
     }
 }
